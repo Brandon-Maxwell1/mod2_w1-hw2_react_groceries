@@ -10,32 +10,28 @@ class Grocery extends React.Component {
     //     })
     // }
 
-    toggleButton = () => {
-        this.setState({
-            isPurchased: this.state.isPurchased
-            ?
-            !this.state.isPurchased
-            : ''
-        })
-    }
+    
 
     render(){
         console.log('We up in the Grocery Cart', this.props)
         // console.log(this)
         return(
            
-            <li onClick={()=> this.props.handleAdd()}>                
+            <li onClick= {() => this.props.handleAdd(this.props.grocery)}>
+                {"Item: "}                
                 {this.props.grocery.item}
-                {this.props.grocery.brand}                
                 <br></br>
+                {"Brand: "}  
+                {this.props.grocery.brand}                
+                
                 {
                     this.state.isPurchased
                     ?
                     <span> is in shopping cart!</span>
                     : ''
                 }
-                <br></br>
-                {<button id="toggleButton" onClick={this.toggleButton}>Remove</button>}                
+                {/* <br></br>
+                {<button id="toggleButton" onClick={this.toggleButton}>Remove</button>}                 */}
             </li>
             // {/* <div>GROCERY</div> */}
             

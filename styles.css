@@ -209,3 +209,8 @@ color: var(--modern-powder-blue);
 #create-product {
     display: flex;
 }
+
+#shoppingCart{
+    display: flex;    
+    background-color: var(--grape-putty);
+}

@@ -5,18 +5,19 @@ class App extends React.Component {
         item: '',
         brand: '',
         units: 0,
-        cartItems: [],
+        cartItems: []
     }
 
-    addToCart = item => {
-        console.log('We int this thang')
+    addToCart = stuff => {
+        // console.log('We in this thang', stuff)
         this.setState({
-            cartItems: [thing, ...this.state.cartItems]
+            cartItems: [stuff, ...this.state.cartItems]
         })
     }
 
     render() {
         // console.log('APP', this.state.groceries)
+        // console.log('CART', this.state.cartItems)
         return (
             <div>
                 <h1>BrAmazon</h1>
@@ -55,8 +56,15 @@ class App extends React.Component {
                 </div>
 
                 <div className="cart">
-                    <h3>Shopping Cart</h3>
+                    <h3 id="shoppingCart">Shopping Cart</h3>
                     <ul>
+                        {
+                            this.state.cartItems.map(stuff => {
+                                return (
+                                    <ShoppingCart grocery={stuff} />
+                                )
+                            })
+                        }
 
 
                     </ul>
